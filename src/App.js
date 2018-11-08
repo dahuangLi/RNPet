@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppLogin} from './login/';
+import {AppLogin} from './Views/login';
 import {store} from './Redux/store/store';
 import { Provider } from 'react-redux';
 

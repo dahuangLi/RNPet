@@ -1,5 +1,5 @@
 import { takeLatest, put } from 'redux-saga/effects';
-import { sagaMiddleware } from '../Redux/store/store'
+import { sagaMiddleware } from '../../Redux/store/store'
 import actions from './Action';
 
 
