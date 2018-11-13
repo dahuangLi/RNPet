@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,TouchableOpacity,Image} from 'react-native';
+import {TextInput} from '../../../Components'
 
 
 export default class App extends Component{
@@ -13,10 +14,7 @@ export default class App extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <TouchableOpacity onPress={() => this.props.saveMessage("hello")}>
-            <Text style={styles.welcome}>Hello Word!</Text>
-            <Text style={styles.welcome}>{this.props.loginStatus}</Text>
-        </TouchableOpacity>
+        <TextInput placeholder='请输入手机号' />
       </View>
     );
   }
