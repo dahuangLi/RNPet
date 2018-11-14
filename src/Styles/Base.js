@@ -1,8 +1,10 @@
-import {Dimensions, NativeModules, PixelRatio, Platform, StyleSheet} from 'react-native';
+// import {Dimensions, NativeModules, PixelRatio, Platform, StyleSheet} from 'react-native';
+
+import {Dimensions, PixelRatio } from 'react-native';
 
 import { Deviceinfo } from '../Utils';
-import semver from 'semver';
-const {LCBStatusBarManager} = NativeModules;
+// import semver from 'semver';
+// const {LCBStatusBarManager} = NativeModules;
 
 export const window = {
     height: Dimensions.get('window').height,
@@ -84,32 +86,32 @@ export const icon = {
     lg: 18
 };
 
-export const paddingTop = Platform.select({
-    ios: Deviceinfo.isIphoneX() ? safeArea.portrait.top : safeArea.default.top,
-    android: semver.gte(Deviceinfo.getVersion(), '2.0.0') && Deviceinfo.getAPILevel() >= 23 ? (LCBStatusBarManager.statusBarHeight) || 25 : 0});
+// export const paddingTop = Platform.select({
+//     ios: Deviceinfo.isIphoneX() ? safeArea.portrait.top : safeArea.default.top,
+//     android: semver.gte(Deviceinfo.getVersion(), '2.0.0') && Deviceinfo.getAPILevel() >= 23 ? (LCBStatusBarManager.statusBarHeight) || 25 : 0});
 
-export default StyleSheet.create({
-    pageContainer: {
-        backgroundColor: fill.body
-    },
-    middle: {
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    drawerContainer: {
-        ...Platform.select({
-            ios: Deviceinfo.isIphoneX() ? {
-                paddingTop: safeArea.portrait.top,
-                paddingBottom: safeArea.portrait.bottom
-            } : {
-                paddingTop: safeArea.default.top
-            },
-            android: semver.gte(Deviceinfo.getVersion(), '2.0.0') && Deviceinfo.getAPILevel() >= 23 ? {
-                paddingTop: LCBStatusBarManager.statusBarHeight || 25
-            } : {
-                paddingTop: 0
-            }
-        }),
-        backgroundColor: fill.body
-    }
-});
+// export default StyleSheet.create({
+//     pageContainer: {
+//         backgroundColor: fill.body
+//     },
+//     middle: {
+//         justifyContent: 'center',
+//         alignItems: 'center'
+//     },
+//     drawerContainer: {
+//         ...Platform.select({
+//             ios: Deviceinfo.isIphoneX() ? {
+//                 paddingTop: safeArea.portrait.top,
+//                 paddingBottom: safeArea.portrait.bottom
+//             } : {
+//                 paddingTop: safeArea.default.top
+//             },
+//             android: semver.gte(Deviceinfo.getVersion(), '2.0.0') && Deviceinfo.getAPILevel() >= 23 ? {
+//                 paddingTop: LCBStatusBarManager.statusBarHeight || 25
+//             } : {
+//                 paddingTop: 0
+//             }
+//         }),
+//         backgroundColor: fill.body
+//     }
+// });

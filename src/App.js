@@ -4,11 +4,11 @@ import {store} from './Redux/store/store';
 import { Provider } from 'react-redux';
 
 export default class App extends Component{
-  render (){
-    return (
-      <Provider store={store}>
-        <AppLogin />
-      </Provider>
-    )
-  }
+    render (){
+        return (
+            <Provider store={store}>
+                <AppLogin />
+            </Provider>
+        );
+    }
 }

@@ -5,11 +5,11 @@ import reducer from './Reducer';
 
 
 class AppLogin extends Component{
-  render (){
-    return (
-      <LoginView />
-    )
-  }
+    render (){
+        return (
+            <LoginView />
+        );
+    }
 }
 
-export {AppLogin,reducer,sagas}; 
+export {AppLogin, reducer, sagas}; 
