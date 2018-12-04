@@ -2,17 +2,20 @@ import { connect } from 'react-redux';
 import Login from '../Components/login';
 import actions from '../Action';
 
-const mapStateToProps = (state) => {   
-    console.log(state)
-    const {loginStatus} = state.Login;
+const mapStateToProps = (state) => {  
+    const {loginStatus, checkCode} = state.Login;
     return {
-        loginStatus
+        loginStatus, checkCode
     };
 };
 const mapDispatchToProps = (dispatch) => {
     return {
-        saveMessage(text){
+        saveMessage(){
             dispatch(actions.saveMessage());
+        },
+        getCode(data){
+            if (data.ret == 0)
+                dispatch(actions.getCode());
         }
     };  
 };

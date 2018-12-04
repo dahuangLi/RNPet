@@ -1,11 +1,11 @@
-import client from '../reducer/reducer.js'
+import client from '../reducer/reducer.js';
 import {
     createStore,
     applyMiddleware,
     combineReducers
 } from 'redux';
-import * as GlobalActionTypes from '../action/action.js'
-import createSagaMiddleware from 'redux-saga'
+import * as GlobalActionTypes from '../action/action.js';
+import createSagaMiddleware from 'redux-saga';
 import {
     batchActions,
     enableBatching
@@ -17,25 +17,25 @@ function createReducer(asyncReducers) {
     let rootReducer = enableBatching(combineReducers({
         client,
         ...asyncReducers
-    }))
+    }));
     
     return (state, action) => {
         if (action.type === GlobalActionTypes.LOGOUT) {
-            state = undefined
+            state = undefined;
         }
-        console.log(rootReducer)
-        return rootReducer(state, action)
-    }
+        console.log(rootReducer);
+        return rootReducer(state, action);
+    };
 
 }
 
 
-const sagaMiddleware = createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
     combineReducers({client}), {},
     applyMiddleware(sagaMiddleware)
-)
+);
 
 
 
@@ -50,4 +50,4 @@ export {
     store,
     sagaMiddleware,
     batchActions
-}
+};
