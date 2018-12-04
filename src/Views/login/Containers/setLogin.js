@@ -3,16 +3,19 @@ import Login from '../Components/login';
 import actions from '../Action';
 
 const mapStateToProps = (state) => {   
-    console.log(state)
-    const {loginStatus} = state.Login;
+    console.log(state);
+    const {loginStatus, checkCode} = state.Login;
     return {
-        loginStatus
+        loginStatus, checkCode
     };
 };
 const mapDispatchToProps = (dispatch) => {
     return {
-        saveMessage(text){
+        saveMessage(){
             dispatch(actions.saveMessage());
+        },
+        getCode(){
+            dispatch(actions.getCode());
         }
     };  
 };

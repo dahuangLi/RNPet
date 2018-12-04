@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, TextInput, Text} from 'react-native';
+import { StyleSheet, View, TextInput, Text, TouchableOpacity} from 'react-native';
 // import {font} from '../../../Styles';
 // import {TextInput} from '../../../Components'
 
@@ -27,7 +27,7 @@ export default class App extends Component{
                 <View style={[styles.inputStyle, styles.checkBox]}>
                     <View>
                         <TextInput style={[styles.inputStyle, {marginTop: 10, width: 120, fontSize: 22}]} 
-                            placeholder='验证码' 
+                            placeholder={this.props.checkCode ? this.props.checkCode : '验证码' }
                             underlineColorAndroid='transparent'
                             placeholderTextColor={'#c1c1c1'}
                             autoCorrect={false}
@@ -36,9 +36,9 @@ export default class App extends Component{
                         />
                         <View style={[styles.line, {width: 120}]}></View>
                     </View>
-                    <View sytle={styles.checkButton}>
-                        <Text>获取验证码</Text>
-                    </View>
+                    <TouchableOpacity onPress={this.props.getCode} sytle={styles.checkButton}>
+                        <Text style={styles.checkCode}>获取验证码</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         );
@@ -49,14 +49,19 @@ const styles = StyleSheet.create({
     example: {
 
     },
+    checkCode: {
+        fontSize: 20,
+        color: 'black'
+    },
     checkButton: {
         width: 60,
         height: 30,
-        backgroundColor: 'yellow'
+        backgroundColor: '#69f'
     },
     checkBox: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        alignItems: 'flex-end'
     },
     line: {
         height: 1,
@@ -65,7 +70,6 @@ const styles = StyleSheet.create({
     },
     inputStyle: {
         width: 230,
-        // fontSize: 22,
         borderWidth: 0,
         height: 50
     },
