@@ -1,29 +1,25 @@
 import { takeLatest, put } from 'redux-saga/effects';
 import { sagaMiddleware } from '../../Redux/store/store';
 import actions from './Action';
+import { Location } from 'react-native-baidumap-sdk';
 
 // import Ajax from '../../Components/Ajax';
 // import Axios from 'axios';
 
 
 
-function* saveMessage() {
-    yield put(actions.changeValue({ loginStatus: '1' }));
+function* locationInit() {
+    yield Location.init();
+    Location.addLocationListener((location) => saveLocationInfo(location));
+    Location.start();
 }
 
-function* saveCode() {
-    // let params = {
-    //     method: 'POST',
-    //     url: 'getCheckNumber',
-    //     phoneNumber: '123456'
-    // };
-    // const result = yield Ajax(params);
-    
-    yield put(actions.changeCode({ checkCode: '123456' }));
+function* saveLocationInfo(info) {
+    console.log(info);
+    yield put(actions.saveLocation(info));
 }
 
 
 sagaMiddleware.run(function* () {
-    yield takeLatest(actions.saveMessage, saveMessage);
-    yield takeLatest(actions.getCode, saveCode);
+    yield takeLatest(actions.locationInit, locationInit);
 });

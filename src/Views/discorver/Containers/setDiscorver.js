@@ -2,13 +2,17 @@ import { connect } from 'react-redux';
 import Discorver from '../Components/Discorver';
 import actions from '../Action';
 
-const mapStateToProps = () => {  
-    return {};
+const mapStateToProps = (state) => {  
+    const {latitude, longitude} = state.Discorver;
+    console.log(state);
+    return {
+        latitude, longitude
+    };
 };
 const mapDispatchToProps = (dispatch) => {
     return {
-        saveMessage(){
-            dispatch(actions.saveMessage());
+        locationInit(){
+            dispatch(actions.locationInit());
         }
     };  
 };
