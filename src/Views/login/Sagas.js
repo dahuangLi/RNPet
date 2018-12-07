@@ -1,6 +1,7 @@
 import { takeLatest, put } from 'redux-saga/effects';
 import { sagaMiddleware } from '../../Redux/store/store';
 import actions from './Action';
+import {NavigationService} from '../../Components';
 // import Ajax from '../../Components/Ajax';
 // import Axios from 'axios';
 
@@ -17,7 +18,7 @@ function* saveCode() {
     //     phoneNumber: '123456'
     // };
     // const result = yield Ajax(params);
-
+    NavigationService.navigate('Main');
     yield put(actions.changeCode({ checkCode: '123456' }));
 }
 

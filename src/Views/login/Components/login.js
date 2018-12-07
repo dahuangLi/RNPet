@@ -36,8 +36,8 @@ export default class App extends Component{
                         />
                         <View style={[styles.line, {width: 120}]}></View>
                     </View>
-                    <TouchableOpacity onPress={() => TencentCaptcha.show(this.props.getCode)} sytle={styles.checkButton}>
-                        {/* <TouchableOpacity onPress={this.props.getCode} sytle={styles.checkButton}> */}
+                    {/* <TouchableOpacity onPress={() => TencentCaptcha.show(this.props.getCode)} sytle={styles.checkButton}> */}
+                    <TouchableOpacity onPress={this.props.getCode} sytle={styles.checkButton}>
                         <Text style={styles.checkCode}>获取验证码</Text>
                     </TouchableOpacity>
                 </View>

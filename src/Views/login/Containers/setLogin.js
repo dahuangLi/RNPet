@@ -14,8 +14,8 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(actions.saveMessage());
         },
         getCode(data){
-            if (data.ret == 0)
-                dispatch(actions.getCode());
+            // if (data.ret == 0)
+            dispatch(actions.getCode());
         }
     };  
 };
