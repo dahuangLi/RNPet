@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Discorver from '../Components/Discorver';
 import actions from '../Action';
 
-const mapStateToProps = (state) => {  
+const mapStateToProps = () => {  
     return {};
 };
 const mapDispatchToProps = (dispatch) => {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text } from 'react-native';
+// import { View, Text } from 'react-native';
 import DiscorverView from './Containers/setDiscorver';
 import * as sagas from './Sagas.js';
 import reducer from './Reducer';

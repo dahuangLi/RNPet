@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, TextInput, Text, TouchableOpacity} from 'react-native';
 // import {font} from '../../../Styles';
-import {TencentCaptcha} from '../../../Components';
+// import {TencentCaptcha} from '../../../Components';
 
 
 export default class App extends Component{
