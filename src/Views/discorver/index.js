@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import LoginView from './Containers/setLogin';
+import { View, Text } from 'react-native';
+// import LoginView from './Containers/setLogin';
 import * as sagas from './Sagas.js';
 import reducer from './Reducer';
 
 
-class AppLogin extends Component{
+class Discorver extends Component{
     static navigationOptions = {
-        title: 'Home',
+        title: 'Discorver',
         headerStyle: {
             backgroundColor: '#69f'
         },
@@ -17,10 +18,10 @@ class AppLogin extends Component{
     };
     render (){
         return (
-            <LoginView />
+            <View><Text>发现</Text></View>
         );
     }
 }
 
-export {AppLogin, reducer, sagas}; 
+export {Discorver, reducer, sagas}; 
 

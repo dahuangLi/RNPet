@@ -29,6 +29,7 @@
 export { default as TextInput } from './TextInput';
 export { default as TencentCaptcha } from './Captcha/TencentCaptcha';
 export { default as Ajax } from './Ajax';
+export { default as NavigationService } from './NavigationService';
 // export { default as UserInfo } from './UserInfo';
 // export { default as Stepper } from './Stepper';
 // export { default as SlideMenu } from './SlideMenu';
