@@ -6,6 +6,9 @@ import reducer from './Reducer';
 
 
 class Discorver extends Component{
+    static navigationOptions = {
+        header: null
+    };
     render() {
         return (
             <DiscorverView />

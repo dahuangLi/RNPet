@@ -1,24 +1,9 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity, View, Text} from 'react-native';
 import { MapView, Location } from 'react-native-baidumap-sdk';
 import icon from '../../../Images/ic_my_location.png';
 
-const style = StyleSheet.create({
-    button: {
-        position: 'absolute',
-        right: 16,
-        bottom: 16,
-        backgroundColor: '#fff',
-        borderRadius: 40,
-        elevation: 2
-    },
-    icon: {
-        width: 24,
-        height: 24,
-        margin: 12,
-        tintColor: '#616161'
-    }
-});
+
 
 export default class Discorver extends Component {
 
@@ -54,9 +39,38 @@ export default class Discorver extends Component {
                       <Image style={style.icon} source={icon} />
                   </TouchableOpacity>
               </View>
+              <View style={style.releaseBox}>
+                  <TouchableOpacity onPress={this.props.gotoRelease}>
+                      <Text>发布我的</Text>
+                  </TouchableOpacity>
+              </View>
           </View>
       );
   }
 }
 
+const style = StyleSheet.create({
+    releaseBox: {
+        position: 'absolute',
+        right: 16,
+        top: '30%',
+        backgroundColor: '#69f',
+        borderRadius: 40,
+        elevation: 2
+    },
+    button: {
+        position: 'absolute',
+        right: 16,
+        bottom: 16,
+        backgroundColor: '#fff',
+        borderRadius: 40,
+        elevation: 2
+    },
+    icon: {
+        width: 24,
+        height: 24,
+        margin: 12,
+        tintColor: '#616161'
+    }
+});
 

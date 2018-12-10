@@ -18,7 +18,7 @@ function* saveCode() {
     //     phoneNumber: '123456'
     // };
     // const result = yield Ajax(params);
-    NavigationService.navigate('Main');
+    NavigationService.navigate('Discorver');
     yield put(actions.changeCode({ checkCode: '123456' }));
 }
 

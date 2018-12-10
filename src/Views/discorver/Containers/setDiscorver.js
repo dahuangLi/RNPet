@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Discorver from '../Components/Discorver';
-import actions from '../Action';
+// import actions from '../Action';
+import {NavigationService} from '../../../Components';
 
 const mapStateToProps = (state) => {  
     const {latitude, longitude} = state.Discorver;
@@ -9,10 +10,10 @@ const mapStateToProps = (state) => {
         latitude, longitude
     };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = () => {
     return {
-        locationInit(){
-            dispatch(actions.locationInit());
+        gotoRelease(){
+            NavigationService.navigate('Release');
         }
     };  
 };

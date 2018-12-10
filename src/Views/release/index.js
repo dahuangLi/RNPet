@@ -7,14 +7,7 @@ import reducer from './Reducer';
 
 class Release extends Component{
     static navigationOptions = {
-        title: 'Release',
-        headerStyle: {
-            backgroundColor: '#69f'
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-            fontWeight: 'bold'
-        }
+        header: null
     };
     render (){
         return (

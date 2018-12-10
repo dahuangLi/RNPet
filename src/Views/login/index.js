@@ -6,14 +6,7 @@ import reducer from './Reducer';
 
 class AppLogin extends Component{
     static navigationOptions = {
-        title: 'Home',
-        headerStyle: {
-            backgroundColor: '#69f'
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-            fontWeight: 'bold'
-        }
+        header: null
     };
     render (){
         return (
